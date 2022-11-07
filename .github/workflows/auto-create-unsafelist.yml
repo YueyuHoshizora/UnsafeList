@@ -36,4 +36,4 @@ jobs:
         destination_repo: 'YueyuHoshizora/OpenData'
         user_email: 'yueyuhoshizora@gmail.com'
         user_name: 'YueyuHoshizora'
-        commit_message: "Auto Update File At ${{ env.now }}" 
+        commit_message: "Auto Update File At ${{ env.now }} UTC" 
