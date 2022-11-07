@@ -32,6 +32,8 @@ jobs:
     #    pip install build
     - name: Run Shell
       run: python main.py
+    - name: Set current date as env variable
+      run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
     - name: Pushes file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
@@ -41,4 +43,4 @@ jobs:
         destination_repo: 'YueyuHoshizora/OpenData'
         user_email: 'yueyuhoshizora@gmail.com'
         user_name: 'YueyuHoshizora'
-        commit_message: 'auto update file.'
+        commit_message: "Auto Update File At $NOW" 
