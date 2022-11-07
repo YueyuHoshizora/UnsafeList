@@ -23,6 +23,8 @@ try:
         for line in lines:
           if line.startswith("#") or line.startswith("!"): continue
           line = line.replace("|", "").replace("^", "").replace("0.0.0.0 ", "")
+          if re.match(r"^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$", line) != None:
+            continue
           if len(line) < 1: continue
           print(line, file=f)
 
