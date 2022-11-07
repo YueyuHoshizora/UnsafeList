@@ -42,7 +42,7 @@ jobs:
     - name: Pushes file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKIN_OpenData }}
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'unsafelist.txt'
         destination_repo: 'YueyuHoshizora/OpenData'
