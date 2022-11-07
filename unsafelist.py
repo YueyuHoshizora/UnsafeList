@@ -1,6 +1,5 @@
-import re, hashlib, os, tarfile
+import re, hashlib, os, tarfile, zipfile
 from urllib.request import urlopen
-from zipfile import ZipFile
 
 # 處理的資料清單
 black_list_source = [
@@ -70,8 +69,8 @@ try:
         print(m.hexdigest(), file=f, end='')
 
     # 產出 zip 壓縮檔
-    with ZipFile(f'{fileFolder}/{fileName}.zip', 'w') as f:
-        f.write(f'{fileFolder}/{fileName}.txt')
+    with zipfile.ZipFile(f'{fileFolder}/{fileName}.zip', mode='w', compression=zipfile.ZIP_DEFLATED) as f:
+        f.write(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
     
     # 產出 tar.gz 壓縮檔
     with tarfile.open(f'{fileFolder}/{fileName}.tar.gz', 'w:gz') as f:
