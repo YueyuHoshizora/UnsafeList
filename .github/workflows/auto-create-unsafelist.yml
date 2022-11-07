@@ -11,6 +11,7 @@ name: auto create unsafelist.txt
 on:
   schedule:
     - cron: '0 */3 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
