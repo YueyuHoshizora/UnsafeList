@@ -23,12 +23,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-    #- name: Install dependencies
-    #  run: |
-    #    python -m pip install --upgrade pip
-    #    pip install build
     - name: Run Shell
       run: python main.py
+    - name: Set current date as env variable
+      run: echo "now=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
     - name: Pushes file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
@@ -38,4 +36,4 @@ jobs:
         destination_repo: 'YueyuHoshizora/OpenData'
         user_email: 'yueyuhoshizora@gmail.com'
         user_name: 'YueyuHoshizora'
-        commit_message: "Auto Update File At ${{ $(date +'%Y-%m-%d %H:%M:%S') }}"
+        commit_message: "Auto Update File At ${{ env.now }}" 
