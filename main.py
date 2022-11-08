@@ -1,2 +1,3 @@
-import os
-os.system('python unsafelist.py')
+import subprocess
+
+proc = subprocess.run(['python', 'unsafelist.py'], stdout=subprocess.PIPE)
