@@ -35,15 +35,18 @@ try:
                     if line.startswith("#") or line.startswith("!"): continue
 
                     # 清除開頭字元
-                    line = line.replace("|", "").replace("^", "").replace("0.0.0.0 ", "")
+                    line = line.replace("|", "").replace("^", "").replace(
+                        "0.0.0.0 ", "")
 
                     # 忽略僅有 IP 的資訊
-                    pattern = re.compile("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+", re.MULTILINE | re.UNICODE)
+                    pattern = re.compile("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+",
+                                         re.MULTILINE | re.UNICODE)
                     if re.match(pattern, line) != None:
                         continue
 
                     # 忽略不符合網址規範的資訊
-                    pattern = re.compile("\.?([0-9a-z-_]+\.?)", re.MULTILINE | re.UNICODE)
+                    pattern = re.compile("\.?([0-9a-z-_]+\.?)",
+                                         re.MULTILINE | re.UNICODE)
                     if re.match(pattern, line) == None:
                         continue
 
@@ -57,21 +60,22 @@ try:
                 web_file.close()
             except Exception as ex:
                 print(f"issue: {url}")
-    
-    # 開始計算產出檔案的 MD5
+
+    # 產出 md5 資料檔
     m = hashlib.md5()
     with open(f'{fileFolder}/{fileName}.txt', "rb") as f:
         # 分批讀取檔案內容，計算 MD5 雜湊值
         for chunk in iter(lambda: f.read(4096), b""):
             m.update(chunk)
-    # 寫入 md5 檢查資料到檔案
     with open(f'{fileFolder}/{fileName}.md5', 'w') as f:
         print(m.hexdigest(), file=f, end='')
 
     # 產出 zip 壓縮檔
-    with zipfile.ZipFile(f'{fileFolder}/{fileName}.zip', mode='w', compression=zipfile.ZIP_DEFLATED) as f:
+    with zipfile.ZipFile(f'{fileFolder}/{fileName}.zip',
+                         mode='w',
+                         compression=zipfile.ZIP_DEFLATED) as f:
         f.write(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
-    
+
     # 產出 tar.gz 壓縮檔
     with tarfile.open(f'{fileFolder}/{fileName}.tar.gz', 'w:gz') as f:
         f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
