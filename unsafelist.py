@@ -28,36 +28,34 @@ try:
         for url in black_list_source:
             try:
                 # 從網路開啟檔案
-                web_file = urlopen(url)
-                lines = web_file.read().decode('utf-8').split('\n')
-                for line in lines:
-                    # 忽略註解
-                    if line.startswith("#") or line.startswith("!"): continue
+                with urlopen(url) as wf:
+                    lines = wf.read().decode('utf-8').split('\n')
+                    for line in lines:
+                        # 忽略註解
+                        if line.startswith("#") or line.startswith("!"):
+                            continue
 
-                    # 清除開頭字元
-                    line = line.replace("|", "").replace("^", "").replace(
-                        "0.0.0.0 ", "")
+                        # 清除開頭字元
+                        line = line.replace("|", "").replace("^", "").replace(
+                            "0.0.0.0 ", "")
 
-                    # 忽略僅有 IP 的資訊
-                    pattern = re.compile("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+",
-                                         re.MULTILINE | re.UNICODE)
-                    if re.match(pattern, line) != None:
-                        continue
+                        # 忽略僅有 IP 的資訊
+                        pattern = re.compile("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+",
+                                             re.MULTILINE | re.UNICODE)
+                        if re.match(pattern, line) != None:
+                            continue
 
-                    # 忽略不符合網址規範的資訊
-                    pattern = re.compile("\.?([0-9a-z-_]+\.?)",
-                                         re.MULTILINE | re.UNICODE)
-                    if re.match(pattern, line) == None:
-                        continue
+                        # 忽略不符合網址規範的資訊
+                        pattern = re.compile("\.?([0-9a-z-_]+\.?)",
+                                             re.MULTILINE | re.UNICODE)
+                        if re.match(pattern, line) == None:
+                            continue
 
-                    # 判斷清除完後的資料是否為空行
-                    if len(line) < 1: continue
+                        # 判斷清除完後的資料是否為空行
+                        if len(line) < 1: continue
 
-                    # 進行檔案寫入
-                    print(line, file=f)
-
-                # 關閉網路來源檔案
-                web_file.close()
+                        # 進行檔案寫入
+                        print(line, file=f)
             except Exception:
                 print(f"issue: {url}")
 
