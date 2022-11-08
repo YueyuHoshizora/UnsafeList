@@ -20,7 +20,7 @@ try:
     # 建立目錄
     try:
         os.mkdir(fileFolder)
-    except Exception as ex:
+    except Exception:
         pass
 
     # 開啟檔案準備進行寫入
@@ -58,7 +58,7 @@ try:
 
                 # 關閉網路來源檔案
                 web_file.close()
-            except Exception as ex:
+            except Exception:
                 print(f"issue: {url}")
 
     # 產出 md5 資料檔
