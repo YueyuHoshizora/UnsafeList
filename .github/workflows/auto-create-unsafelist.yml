@@ -33,7 +33,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'domain'
-        destination_repo: 'YueyuHoshizora/OpenData'
+        destination_repo: 'HoshizoraProject/OpenData'
         user_email: 'yueyuhoshizora@gmail.com'
-        user_name: 'YueyuHoshizora'
+        user_name: 'HoshizoraProject'
         commit_message: "Auto Update File At ${{ env.now }} UTC" 
