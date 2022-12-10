@@ -32,7 +32,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'domain'
+        source_file: 'unsafelist'
         destination_repo: 'HoshizoraProject/OpenData'
         user_email: 'yueyuhoshizora@gmail.com'
         user_name: 'HoshizoraProject'
