@@ -13,7 +13,7 @@ black_list_source = [
 ]
 
 # 定義輸出檔案名稱
-fileFolder = "domain"
+fileFolder = "unsafelist"
 fileName = "unsafelist"
 
 try:
