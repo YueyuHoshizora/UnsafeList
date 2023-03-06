@@ -3,13 +3,13 @@ from urllib.request import urlopen
 
 # 處理的資料清單
 black_list_source = [
-    "https://malware-filter.gitlab.io/malware-filter/phishing-filter-agh.txt",
-    "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuardHome.txt",
-    "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt",
-    "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
-    "https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts",
-    "https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hosts",
-    "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh.txt"
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_10.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_8.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"
 ]
 
 # 定義輸出檔案名稱
