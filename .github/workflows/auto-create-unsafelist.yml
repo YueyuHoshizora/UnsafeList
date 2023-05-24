@@ -28,7 +28,7 @@ jobs:
     - name: Set current date as env variable
       run: echo "now=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
     - name: Pushes file
-      uses: dmnemec/copy_file_to_another_repo_action@main
+      uses: Jason2866/copy_file_to_another_repo_action@http408_fix
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
