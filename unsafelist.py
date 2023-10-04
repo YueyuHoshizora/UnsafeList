@@ -10,7 +10,9 @@ black_list_source = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt"
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_44.txt"
 ]
 
 # 定義輸出檔案名稱
