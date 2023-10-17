@@ -82,8 +82,8 @@ try:
     #     f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
 
     # 產出 tar.xz 壓縮檔
-    with tarfile.open(f'{fileFolder}/{fileName}.tar.xz', 'w:xz') as f:
-        f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
+    # with tarfile.open(f'{fileFolder}/{fileName}.tar.xz', 'w:xz') as f:
+    #     f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
 
     # 產出 tar.zb2 壓縮檔
     # with tarfile.open(f'{fileFolder}/{fileName}.tar.bz2', 'w:bz2') as f:
