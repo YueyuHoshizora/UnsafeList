@@ -35,5 +35,5 @@ jobs:
         source_file: 'unsafelist'
         destination_repo: 'HoshizoraProject/OpenData'
         user_email: '<>'
-        user_name: 'HoshizoraProject-BOT'
+        user_name: 'YueyuHoshizora-BOT'
         commit_message: "Auto Update File At ${{ env.now }} UTC" 
