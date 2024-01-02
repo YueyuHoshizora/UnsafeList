@@ -61,33 +61,6 @@ try:
                         print(line, file=f)
             except Exception:
                 print(f"issue: {url}")
-
-    # 產出 md5 資料檔
-    # m = hashlib.md5()
-    # with open(f'{fileFolder}/{fileName}.txt', "rb") as f:
-    #     # 分批讀取檔案內容，計算 MD5 雜湊值
-    #     for chunk in iter(lambda: f.read(4096), b""):
-    #         m.update(chunk)
-    # with open(f'{fileFolder}/{fileName}.md5', 'w') as f:
-    #     print(m.hexdigest(), file=f, end='')
-
-    # 產出 zip 壓縮檔
-    # with zipfile.ZipFile(f'{fileFolder}/{fileName}.zip',
-    #                      mode='w',
-    #                      compression=zipfile.ZIP_DEFLATED) as f:
-    #     f.write(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
-
-    # 產出 tar.gz 壓縮檔
-    # with tarfile.open(f'{fileFolder}/{fileName}.tar.gz', 'w:gz') as f:
-    #     f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
-
-    # 產出 tar.xz 壓縮檔
-    # with tarfile.open(f'{fileFolder}/{fileName}.tar.xz', 'w:xz') as f:
-    #     f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
-
-    # 產出 tar.zb2 壓縮檔
-    # with tarfile.open(f'{fileFolder}/{fileName}.tar.bz2', 'w:bz2') as f:
-    #     f.add(f'{fileFolder}/{fileName}.txt', arcname=f'{fileName}.txt')
         
 except Exception as ex:
     print(f"issue: {ex}")
